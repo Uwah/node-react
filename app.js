@@ -1,14 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var reactSSR = require('./server/reactSsr')
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const reactSSR = require('./server/reactSsr')
+const config = require('./config')
 
-var app = express();
+const app = express();
+
+if(!process.env.NODE_ENV) {
+  process.env.NODE_ENV = 'development'
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,7 +23,26 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); //静态文件目录
+
+
+app.locals.server_file_path = config.server_file_path
+app.locals.server_img_path = config.server_img_path
+app.locals.imgDomain = config.imgDomain
+
+//配置开发环境 
+if('development' === app.get('env')) {
+  app.set('showStackError', true)
+  app.use(logger(':method :url :status'))
+  app.locals.pretty = true //格式化页面内容
+  app.use((err, req, res, next) => {
+    res.status(err.status || 500)
+    res.render('error', {
+      message: err.message,
+      error: err
+    })
+  })
+}
 
 app.use('/', reactSSR);
 app.use('/users', usersRouter);

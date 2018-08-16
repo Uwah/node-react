@@ -1,0 +1,11 @@
+@charset 'UTF-8';
+@import 'variable';
+
+.head-nav {
+  height: 50px;
+  background-color: $nav-head-bgcolor;
+  line-height: 49px;
+  color: $nav-head-color;
+  padding-left: 50px;
+  font-size: 14px;
+}
