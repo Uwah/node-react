@@ -36,13 +36,13 @@ class Layout extends React.Component {
           <Menu 
             onClick={this.handleClick}
             style={{ width: 256 }}
-            // defaultSelectedKeys={['1']}
+            defaultSelectedKeys={['1']}
             defaultOpenKeys={['sub1']}
             className="left-menu" 
             mode="inline">
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
               <MenuItemGroup key="g1" title="Item 1">
-                <Menu.Item key="1">Option 1</Menu.Item>
+                <Menu.Item key="1"><a href="/linechart">linechart</a></Menu.Item>
                 <Menu.Item key="2">Option 2</Menu.Item>
               </MenuItemGroup>
               <MenuItemGroup key="g2" title="Item 2">

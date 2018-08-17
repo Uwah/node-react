@@ -1,6 +1,7 @@
 export default {
   path: '/',
   children: [
+    require('./home').default,
     require('./linechart').default
   ],
   async action({ next }) {

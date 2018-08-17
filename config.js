@@ -16,7 +16,7 @@ try {
     var config = require('./config/development')
   }  
 } catch(err) {
-  console.error('加载配置配置文件报错... ' + err)
+  console.error('加载配置配置文件报错...' + err)
   throw err
 }
 
