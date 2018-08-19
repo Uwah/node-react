@@ -4,8 +4,8 @@ import axios from 'axios'
 const echarts = require('echarts/lib/echarts');
 require('echarts/lib/chart/bar');
 // // 引入提示框和标题组件
-// require('echarts/lib/component/tooltip');
-// require('echarts/lib/component/title');
+require('echarts/lib/component/tooltip');
+require('echarts/lib/component/title');
 
 
 
