@@ -16,6 +16,8 @@
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
+    "mobx": "^5.0.3",
+    "mobx-react": "^5.2.5",
     "morgan": "^1.9.0",
     "query-string": "^6.1.0",
     "react": "^16.4.1",

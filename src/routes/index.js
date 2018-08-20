@@ -1,3 +1,5 @@
+
+import RouteLocation from '@/stores/RouteLocation'
 export default {
   path: '/',
   children: [
@@ -8,6 +10,8 @@ export default {
     let route 
     do {
       route = await next()
+      RouteLocation.updateSelectKey(route.locationInfo.selectKey)
+      RouteLocation.updateOpenKey(route.locationInfo.openKey)
     } while(!route)
 
     return route

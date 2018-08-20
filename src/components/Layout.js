@@ -2,14 +2,15 @@ import React from 'react'
 import HeadTab from './HeadTab'
 import Content from './Content'
 import PropTypes from 'prop-types'
-
+import { inject, observer } from 'mobx-react'
 import { Menu, Icon } from 'antd'
 const SubMenu = Menu.SubMenu
 const MenuItemGroup = Menu.ItemGroup
 
 import '@/css/layout.scss'
 
-
+@inject('RouteLocation')
+@observer
 class Layout extends React.Component {
   constructor(props) {
     super(props)
@@ -29,6 +30,8 @@ class Layout extends React.Component {
   // }
 
   render() {
+    const { RouteLocation } = this.props
+
     return (
       <div className="layout-content">
         <HeadTab></HeadTab>
@@ -36,8 +39,8 @@ class Layout extends React.Component {
           <Menu 
             onClick={this.handleClick}
             style={{ width: 256 }}
-            defaultSelectedKeys={['1']}
-            defaultOpenKeys={['sub1']}
+            defaultSelectedKeys={[RouteLocation.selectKey]}
+            defaultOpenKeys={[RouteLocation.openKey]}
             className="left-menu" 
             mode="inline">
             <SubMenu key="sub1" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>

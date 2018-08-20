@@ -1,10 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Provider } from 'mobx-react'
 import Layout from './components/Layout'
+import RouteLocation from './stores/RouteLocation'
 import '@/css/App.scss'
 import 'antd/dist/antd.css'
 import './api/request' //请求统一拦截、配置
 
+const stores = {
+  RouteLocation
+}
 const ContextType = {
   history: PropTypes.object.isRequired,
   toPath: PropTypes.func.isRequired,
@@ -27,7 +32,9 @@ class App extends React.Component {
   render() {
     const child = React.Children.only(this.props.children)
     return(
-      <Layout>{child}</Layout>
+      <Provider {...stores}>
+        <Layout>{child}</Layout>
+      </Provider>
     )
   }
 }

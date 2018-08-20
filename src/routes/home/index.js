@@ -7,6 +7,10 @@ export default {
   action() {
     return {
       title: '数据统计分析',
+      locationInfo: {
+        selectKey: '0',
+        openKey: 'home'
+      },
       component: <Home key="home"/>
     }
   }
