@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Provider } from 'mobx-react'
 import Layout from './components/Layout'
-import RouteLocation from './stores/RouteLocation'
+import routeLocation from './stores/routeLocation'
 import '@/css/App.scss'
 import 'antd/dist/antd.css'
 import './api/request' //请求统一拦截、配置
 
 const stores = {
-  RouteLocation
+  routeLocation
 }
 const ContextType = {
   history: PropTypes.object.isRequired,
