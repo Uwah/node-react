@@ -44,8 +44,8 @@ if('development' === app.get('env')) {
   })
 }
 
+app.use('/api', indexRouter);
 app.use('/', reactSSR);
-app.use('/login', indexRouter);
 // app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

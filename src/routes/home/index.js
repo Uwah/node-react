@@ -9,7 +9,8 @@ export default {
       title: '数据统计分析',
       locationInfo: {
         selectKey: '0',
-        openKey: 'home'
+        openKey: 'home',
+        isMenu: true
       },
       component: <Home key="home"/>
     }

@@ -29,12 +29,11 @@ class Layout extends React.Component {
 
   render() {
     const { routeLocation } = this.props
-
     return (
       <div className="layout-content">
         <HeadTab></HeadTab>
         <div className="content-layout">
-          <SideMenu routeLocation={routeLocation}></SideMenu>
+          {routeLocation.isMenu?<SideMenu routeLocation={routeLocation}></SideMenu>:null}
           <div className="right-content">{this.props.children}</div>
         </div>
       </div>

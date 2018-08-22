@@ -1,0 +1,18 @@
+.login-content {
+  font-size: 0;
+  max-width: 400px;
+  margin: 300px auto 0;
+  // border: 1px solid #1890ff;
+  border-radius: 10px;
+  padding: 25px 50px;
+  box-shadow: 1px 1px 15px 0 rgba(0,0,0,0.10);
+  .login-form-button {
+    width: 100%;
+  }
+  .ant-checkbox-wrapper span ,.login-form-forgot {
+    font-size: 14px;
+  }
+  .login-form-forgot {
+    float: right;
+  }
+}

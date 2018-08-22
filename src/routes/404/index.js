@@ -10,7 +10,8 @@ export default {
       title: '404',
       locationInfo: {
         selectKey: '',
-        openKey: ''
+        openKey: '',
+        isMenu: false
       },
       component: <Invaid />
     }

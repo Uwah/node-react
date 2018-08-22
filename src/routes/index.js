@@ -5,7 +5,8 @@ export default {
   children: [
     require('./home').default,
     require('./linechart').default,
-    require('./404').default
+    require('./login').default,
+    require('./404').default,//404要放在最后
   ],
   async beforeEach({ route, redirect, fullPath }) {
     // debugger
@@ -30,6 +31,7 @@ export default {
       if(route) {
         routeLocation.updateSelectKey(route.locationInfo.selectKey)
         routeLocation.updateOpenKey(route.locationInfo.openKey)
+        routeLocation.setMenuable(route.locationInfo.isMenu)
       }
     } while(!route)
 

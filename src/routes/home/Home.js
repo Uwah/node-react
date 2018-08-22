@@ -1,5 +1,8 @@
 import React from 'react'
+import { observer, inject } from 'mobx-react'
 
+@inject('userInfo')
+@observer
 class Home extends React.Component {
   constructor(props) {
     super(props)
@@ -7,7 +10,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>Home</div>
+      <div>Home<h4>{this.props.userInfo.user.name}</h4></div>
     )
   }
 }

@@ -12,19 +12,25 @@ if(env === 'development') {
   const compiler = webpack(webpackConfig)
   const devMiddleware = require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
-    quiet: false
+    quiet: false,
+    noInfo: false,
+    logLevel: 'error', //表示仅输出错误的日志
+    stats: {
+      chunks: false,
+      colors: true
+    }
   })
 
   const hotMiddleware = require('webpack-hot-middleware')(compiler, {
     log() {
-      console.log('hmr log')
+      // console.log('hmr log')
     }
   })
   // compiler.plugin('compilation', (compilation) => {
   //   compilation.plugin('html-webpack-plugin-after-emit', (data, cb) => {
   //     hotMiddleware.publish({ action: 'reload'})
   //     cb()
-  //   })
+  //   }) v                                     
   // })
 
   app.use(devMiddleware)
