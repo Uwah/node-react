@@ -10,7 +10,6 @@ const LogHandle = require('../../lib/LogHandle')
 const routerLog = LogHandle.getLogger('router')
 
 router.all('*', async (req, res) => {
-  console.log('+++++++++++++++++++++++')
   const apiName = req.path.slice(1)
   const method = req.method
   
