@@ -15,9 +15,13 @@ export default class Login extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await axios.post('/login', {
-      username: this.state.username,
-      password: this.state.password
+    const result = await axios.post('/daq.user.web.login', {
+      loginParam: { 
+        loginType: '1',
+        verCode: '123456',
+        account: '18924029790',
+        hospitalId: '3190011045062273002' 
+      } 
     }).then(res => res.getData())
 
     console.log(result)

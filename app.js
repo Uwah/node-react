@@ -4,11 +4,11 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const indexRouter = require('./routes/index');
+const LogHandle = require('./lib/LogHandle')
 const usersRouter = require('./routes/users');
 const reactSSR = require('./server/reactSsr')
 const config = require('./config')
-
+const api = require('./server/api/index')
 const app = express();
 
 if(!process.env.NODE_ENV) {
@@ -44,7 +44,11 @@ if('development' === app.get('env')) {
   })
 }
 
-app.use('/api', indexRouter);
+// 打印请求日志到文件
+app.use(LogHandle.connectLogger('http'))
+app.use(LogHandle.connectLogger('router'))
+
+app.use('/api', api);
 app.use('/', reactSSR);
 // app.use('/users', usersRouter);
 
@@ -65,3 +69,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+  

@@ -1,0 +1,21 @@
+{
+  "appenders": {
+    "app": { "type": "dateFile", "filename": "../logs/app.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "http": { "type": "dateFile", "filename": "../logs/http.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "router": { "type": "dateFile", "filename": "../logs/router.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "service": { "type": "dateFile", "filename": "../logs/service.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "request": { "type": "dateFile", "filename": "../logs/request.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "proxy": { "type": "dateFile", "filename": "../logs/proxy.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "middleware": { "type": "dateFile", "filename": "../logs/middleware.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" },
+    "error": { "type": "dateFile", "filename": "../logs/error.log", "maxLogSize": 10485760, "numBackups": 3, "pattern": "-yyyy-MM-dd" }
+    
+  },
+  "levels": {
+    "router": "INFO",
+    "request": "INFO",
+    "middleware": "INFO",
+    "proxy": "INFO",
+    "service": "INFO",
+    "error": "ERROR"
+  }
+}
