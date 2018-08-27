@@ -1,7 +1,7 @@
 const http = require('http')
 const config = require('../../config')
 const signApi = require('./signApi')
-const API_URL = `http://${config.hostname_test}:${config.port_test}${config.path}`
+// const API_URL = `http://${config.hostname_test}:${config.port_test}${config.path}`
 
 const LogHandle = require('../../lib/LogHandle')
 const routerLog = LogHandle.getLogger('router')
@@ -66,7 +66,6 @@ const ajaxHandler = (method, apiName, req, bizParam, cb, headType = 'normal') =>
   })
 
   request.end()
-
-
-
 }
+
+module.exports = ajaxHandler

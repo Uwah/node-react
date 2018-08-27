@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer, inject } from 'mobx-react'
+import axios from 'axios'
 
 @inject('userInfo')
 @observer
@@ -8,9 +9,22 @@ class Home extends React.Component {
     super(props)
   }
 
+  dicTest() {
+    axios.get('dic/list', {
+      params: {
+        type: "district", level: "2", activeState: '1'
+      }
+    }).then(res => {
+      console.log(res)
+    })
+  }
+
   render() {
     return (
-      <div>Home<h4>{this.props.userInfo.user.name}</h4></div>
+      <div>
+        <h4>{this.props.userInfo.user.name}</h4>
+        <button onClick={this.dicTest}>dic</button>
+      </div>
     )
   }
 }

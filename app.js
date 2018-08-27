@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const LogHandle = require('./lib/LogHandle')
-const usersRouter = require('./routes/users');
+const goodsList = require('./routes/goodsList');
 const reactSSR = require('./server/reactSsr')
 const config = require('./config')
 const api = require('./server/api/index')
@@ -48,7 +48,9 @@ if('development' === app.get('env')) {
 app.use(LogHandle.connectLogger('http'))
 app.use(LogHandle.connectLogger('router'))
 
-app.use('/api', api);
+
+app.use('/dic', goodsList);
+// app.use('/api', api);
 app.use('/', reactSSR);
 // app.use('/users', usersRouter);
 
