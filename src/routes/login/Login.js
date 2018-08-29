@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 const FormItem = Form.Item;
-import axios from 'axios'
+import axios from '@/api/request'
 import '@/css/login.scss'
 export default class Login extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class Login extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await axios.post('/daq.user.web.login', {
+    const result = await axios.post('/api/daq.user.web.login', {
       loginParam: { 
         loginType: '1',
         verCode: '123456',

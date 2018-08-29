@@ -1,7 +1,6 @@
 import React from 'react'
 import { observer, inject } from 'mobx-react'
-import axios from 'axios'
-
+import axios from '@/api/request'
 @inject('userInfo')
 @observer
 class Home extends React.Component {
@@ -10,7 +9,7 @@ class Home extends React.Component {
   }
 
   dicTest() {
-    axios.get('dic/list', {
+    axios.get('/dic/list', {
       params: {
         type: "district", level: "2", activeState: '1'
       }

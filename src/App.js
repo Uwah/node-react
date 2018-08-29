@@ -6,7 +6,7 @@ import routeLocation from './stores/routeLocation'
 import userInfo from '@/stores/userInfo'
 import '@/css/App.scss'
 import 'antd/dist/antd.css'
-import './api/request' //请求统一拦截、配置
+// import './api/request' //请求统一拦截、配置
 
 const stores = {
   routeLocation,

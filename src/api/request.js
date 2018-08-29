@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd'
 
-// axios.defaults.baseURL = '/api'
 axios.defaults.headers['Request-With'] = 'xhr'
 // 请求拦截
 axios.interceptors.request.use(config => {
@@ -34,3 +33,5 @@ axios.interceptors.response.use(res => {
 
   return res
 })
+
+module.exports = axios

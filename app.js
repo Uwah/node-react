@@ -50,7 +50,7 @@ app.use(LogHandle.connectLogger('router'))
 
 
 app.use('/dic', goodsList);
-// app.use('/api', api);
+app.use('/api', api);
 app.use('/', reactSSR);
 // app.use('/users', usersRouter);
 
