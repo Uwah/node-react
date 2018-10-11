@@ -4,61 +4,43 @@
 
 var config = {
   debug:true,  // debug 为 true 时，用于本地调试
-  // hostname_test:"120.76.24.129",  //(线上测试)
-  hostname_test:"beta.api.douanquan.com",  //(线上测试)
-  // hostname_test:"172.16.61.219",  //(内网测试)
-  //hostname_test:"192.168.6.73",
-  // port_test:'8080',
+  hostname_test:"xxxxx",  //接口测试地址
   port_test:'80',
   path:'/router',
-  imgDomain:'http://jhd-daq-img.oss-cn-shanghai.aliyuncs.com/',
+  imgDomain:'xxxx',
 
   host:'localhost',
   port:8181, //端口
   pageSize:10,
 
-  // appKey:'T-OPF-02191317',  //授权AppKey
-  // secret:'themis-opf-test', //密匙
-
-  appKey:'OPF-JHD-DAQ-Web',  //授权AppKey
-  secret:'DAQ-Web', //密匙
+  appKey:'xxxxxx',  //授权AppKey
+  secret:'xxx', //密匙
   v:"1.0.0",
   format:"json",
 
   //文章父级目录,用来查询所有文章
-  articleParentCategory:'2140011038422147048',
-  sessionSecret:"DAQ-Manager-Session",
-  weixin_appId:"wx974d23f2588c4648",
-  weixin_secret:"471641f51265b736d80ac7bd0275d6c7",
+  articleParentCategory:'xxxx',
+  sessionSecret:"xxxx",
+  weixin_appId:"xxxx",
+  weixin_secret:"xxxx",
 
   //=========测试环境
   // //用于访问静态文件
   hostname_node:'172.16.61.219',
   port_node:'3000',
   //文件服务器
-  req_domain_name:'http://beta.manager.douanquan.com',
-  server_file_path:'http://beta.file.douanquan.com/',
-  server_img_path:'http://beta.image.douanquan.com/',
+  req_domain_name:'xxxx',
+  server_file_path:'xxx',
+  server_img_path:'xxxxx',
 
   AuthorityPageSize:10,
 
-  // options:{
-  //     // host:"1ac256e68d824785.m.cnsza.kvstore.aliyuncs.com",
-  //     "host":"127.0.0.1",
-  //     // "pass":'1ac256e68d824785:JihuiduoRedis88',
-  //     "port": "6379",
-  //     "ttl": 60 * 60 * 24 * 1   //Session的有效期为1天
-  // }
 
   options:{
-    // host:"1ac256e68d824785.m.cnsza.kvstore.aliyuncs.com",
-    host: 'r-bp11362f1f0fbcf4.redis.rds.aliyuncs.com',
-    // "host":"127.0.0.1",
-    // pass:'1ac256e68d824785:HansRedis666666',
-    pass: 'TsahdgSAFDS3445',
-    // auth:'1ac256e68d824785:HansRedis666666',
-    auth:'TsahdgSAFDS3445',
-    port: "6379",
+    host: 'xxxx',
+    pass: 'xx',
+    auth:'xxxx',
+    port: "6370",
     db:31,
     ttl: 60 * 60 * 24 * 1   //Session的有效期为1天
   },
